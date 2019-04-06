@@ -1,0 +1,222 @@
+@import 'normalize';
+@import 'fonts';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hind';
+
+}
+
+.wrapper {
+  width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+/* HEADER */
+
+header {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  img {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.nav {
+  padding-right: 100px;
+  
+  ul {
+    display: flex;
+    
+  }
+  
+  a {
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #c9af98;
+    padding-left: 20px;
+    position: relative;
+
+    &:hover {
+      color: #e8dbca;
+
+      &::before {
+        content: '|';
+        color: #e8dbca;
+        position: absolute;
+        left: 12px;
+        top: 5;
+      }
+    }
+    
+  }
+}
+
+/* MUSTHEAD */
+
+.musthead {
+  background: url(../images/header-bg.jpg) no-repeat 50% 30%;
+  background-size: cover;
+  height: 500px;
+  margin-top: -155px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  .profile {
+    height: 200px;
+    width: 500px;
+    background: rgba(247, 243, 237, .7);
+    position: relative;
+  }
+
+  .profile-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    border: 1px solid rgba(247, 243, 237, 1);
+    position: absolute;
+    top: -75px;
+    left: 175px;
+  }
+
+  h1 {
+    padding-top: 100px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #845007;
+  }
+
+  p {
+    padding-top: 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ed8a63;
+
+  }
+}
+
+/* ABOUT ME */
+
+.about-me {
+  height: 350px;
+  background: rgba(200, 174, 151, 0.2);
+  padding-top: 50px;
+
+  .wrapper {
+    display: flex;
+  }
+
+  
+  .section-description {
+    width: 80%;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 24px;
+    
+  }
+}
+
+.section-title {
+  width: 20%;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  color: #ed8a63;
+  letter-spacing: 2px;
+  }
+
+.skills {
+  height: 300px;
+  background: rgba(200, 174, 151, 0.5);
+  padding-top: 50px;
+
+  .wrapper {
+    display: flex;
+  }
+
+
+
+}
+
+/* MY WORKS */
+
+.my-works {
+  background: url(../images/shell-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  filter: brightness(90%);
+  padding: 10px 0;
+  
+  h2 {
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+  .sample {
+    background: url(https://picsum.photos/200) no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    margin: 10px 0;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+  
+    &::before, &::after{
+      content: 'DroneZone';
+      position: absolute;
+      top: 70%;
+      right: 0;
+      width: 105%;
+      height: 30%;
+        z-index: 1;
+      background-color: rgba(255,255,255,0.25);
+      transition: all 0.5s;
+      transform: translate(25%, 130%) rotate(-45deg);
+      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+
+    &::after{
+        transition-delay: 0.1s;
+    }
+
+    &:hover {
+      filter: brightness(100%);
+    }
+
+    &:hover::before, &:hover::after{
+      transform: translate(0,0);	
+    }
+  }
+}
