@@ -42,3 +42,25 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Quattrocento';
+    src: url('../fonts/Quattrocento-Bold.eot');
+    src: url('../fonts/Quattrocento-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Quattrocento-Bold.woff2') format('woff2'),
+        url('../fonts/Quattrocento-Bold.woff') format('woff'),
+        url('../fonts/Quattrocento-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quattrocento';
+    src: url('../fonts/Quattrocento-eot');
+    src: url('../fonts/Quattrocento-eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Quattrocento-woff2') format('woff2'),
+        url('../fonts/Quattrocento-woff') format('woff'),
+        url('../fonts/Quattrocento-ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

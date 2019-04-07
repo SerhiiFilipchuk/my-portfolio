@@ -163,6 +163,22 @@ table {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Quattrocento';
+  src: url("../fonts/Quattrocento-Bold.eot");
+  src: url("../fonts/Quattrocento-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Quattrocento-Bold.woff2") format("woff2"), url("../fonts/Quattrocento-Bold.woff") format("woff"), url("../fonts/Quattrocento-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  src: url("../fonts/Quattrocento-eot");
+  src: url("../fonts/Quattrocento-eot?#iefix") format("embedded-opentype"), url("../fonts/Quattrocento-woff2") format("woff2"), url("../fonts/Quattrocento-woff") format("woff"), url("../fonts/Quattrocento-ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -181,6 +197,10 @@ body {
 
 /* HEADER */
 
+header {
+  padding-top: 30px;
+}
+
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,9 +213,60 @@ header .wrapper {
   align-items: center;
 }
 
-header img {
-  height: 150px;
-  width: 150px;
+.logo {
+  height: 80px;
+  font-family: 'Quattrocento';
+  font-weight: normal;
+  font-style: normal;
+  color: #845007;
+  position: relative;
+}
+
+.logo .hexagon {
+  height: 60px;
+  width: 50px;
+  background: #000;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: absolute;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.logo .hexagon-above {
+  background: #e4c79f;
+  top: -15px;
+  left: 25px;
+  z-index: 1;
+}
+
+.logo .hexagon-center {
+  background: rgba(131, 79, 7, 0.6);
+  z-index: 3;
+}
+
+.logo .hexagon-below {
+  background: rgba(200, 174, 151, 0.6);
+  top: 15px;
+  left: 25px;
+  z-index: 2;
+}
+
+.logo .logo-s {
+  position: absolute;
+  font-size: 60px;
+  top: 0;
+  left: 60px;
+  z-index: 4;
+}
+
+.logo .logo-f {
+  color: #e8dbca;
+  position: absolute;
+  font-size: 60px;
+  top: 15px;
+  left: 85px;
+  z-index: 4;
 }
 
 .nav {
@@ -237,7 +308,7 @@ header img {
   background: url(../images/header-bg.jpg) no-repeat 50% 30%;
   background-size: cover;
   height: 500px;
-  margin-top: -155px;
+  margin-top: -110px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,22 +402,25 @@ header img {
 
 /* MY WORKS */
 
-.my-works {
-  background: url(../images/shell-bg.jpg) no-repeat 50% 50%;
-  background-size: cover;
+.last-works {
+  background: rgba(200, 174, 151, 0.2);
   -webkit-filter: brightness(90%);
   filter: brightness(90%);
   padding: 10px 0;
 }
 
-.my-works h2 {
+.last-works h2 {
   text-transform: uppercase;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  color: #ed8a63;
+  letter-spacing: 2px;
   text-align: center;
+  padding: 30px 0 20px 0;
 }
 
-.my-works .wrapper {
+.last-works .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -360,8 +434,8 @@ header img {
   flex-wrap: wrap;
 }
 
-.my-works .sample {
-  background: url(https://picsum.photos/200) no-repeat;
+.last-works .sample {
+  background: url(../images/weather-app.png) no-repeat;
   background-size: cover;
   -webkit-filter: brightness(90%);
   filter: brightness(90%);
@@ -375,9 +449,9 @@ header img {
   overflow: hidden;
 }
 
-.my-works .sample::before,
-.my-works .sample::after {
-  background: rgba(255, 255, 255, 0.25);
+.last-works .sample::before,
+.last-works .sample::after {
+  background: rgba(131, 79, 7, 0.3);
   content: 'DroneZone';
   position: absolute;
   top: 70%;
@@ -393,18 +467,54 @@ header img {
   transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 
-.my-works .sample::after {
+.last-works .sample::after {
   -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s;
 }
 
-.my-works .sample:hover {
+.last-works .sample:hover {
   -webkit-filter: brightness(100%);
   filter: brightness(100%);
 }
 
-.my-works .sample:hover::before,
-.my-works .sample:hover::after {
+.last-works .sample:hover::before,
+.last-works .sample:hover::after {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
+}
+
+.sample1 {
+  background: url(../images/weather-app.png) no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  margin: 10px 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+}
+
+.sample1 .sample-description {
+  background: #c8ae97;
+  height: 90px;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 10px, 20px 10px, 40px 0, 60px 10px, 100% 10px, 100% 100%, 0 100%);
+  clip-path: polygon(0 10px, 20px 10px, 40px 0, 60px 10px, 100% 10px, 100% 100%, 0 100%);
+  display: none;
+  z-index: 3;
+}
+
+.sample1 .sample-shadow {
+  height: 100%;
+  width: 100%;
+  background: rgba(131, 79, 7, 0.6);
+  border-radius: 10px;
+  position: absolute;
+  z-index: 2;
+  display: none;
 }

@@ -20,15 +20,70 @@ body {
 /* HEADER */
 
 header {
+  padding-top: 30px;
+
   .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.logo {
+  height: 80px;
+  font-family: 'Quattrocento';
+  font-weight: normal;
+  font-style: normal;
+  color: #845007;
+  position: relative;
+
+  .hexagon {
+    height: 60px;
+    width: 50px;
+    background: #000;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    position: absolute;
+    transition: all .3s;
 
   }
-  img {
-    height: 150px;
-    width: 150px;
+
+  .hexagon-above {
+    background: rgba(228, 199, 159, 1);
+    top: -15px;
+    left: 25px;
+    z-index: 1;
+
+  }
+
+  .hexagon-center {
+    background: rgba(131, 79, 7, 0.6);
+    z-index: 3;
+  }
+
+  .hexagon-below {
+    background: rgba(200, 174, 151, 0.6);
+    top: 15px;
+    left: 25px;
+    z-index: 2;
+
+  }
+
+  .logo-s {
+    position: absolute;
+    font-size: 60px;
+    top: 0;
+    left: 60px;
+    z-index: 4;
+  }
+
+  .logo-f {
+    color: #e8dbca;
+    position: absolute;
+    font-size: 60px;
+    top: 15px;
+    left: 85px;
+    z-index: 4;
+
   }
 }
 
@@ -71,7 +126,7 @@ header {
   background: url(../images/header-bg.jpg) no-repeat 50% 30%;
   background-size: cover;
   height: 500px;
-  margin-top: -155px;
+  margin-top: -110px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -154,24 +209,25 @@ header {
   .wrapper {
     display: flex;
   }
-
-
-
 }
 
 /* MY WORKS */
 
-.my-works {
-  background: url(../images/shell-bg.jpg) no-repeat 50% 50%;
-  background-size: cover;
+.last-works {
+  background: rgba(200, 174, 151, 0.2);
   filter: brightness(90%);
   padding: 10px 0;
   
   h2 {
     text-transform: uppercase;
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 26px;
+    font-weight: bold;
+    font-style: normal;
+    color: #ed8a63;
+    letter-spacing: 2px;
     text-align: center;
+    padding: 30px 0 20px 0;
+
   }
 
   .wrapper {
@@ -182,7 +238,7 @@ header {
 
   }
   .sample {
-    background: url(https://picsum.photos/200) no-repeat;
+    background: url(../images/weather-app.png) no-repeat;
     background-size: cover;
     filter: brightness(90%);
     border-radius: 10px;
@@ -201,7 +257,7 @@ header {
       width: 105%;
       height: 30%;
         z-index: 1;
-      background-color: rgba(255,255,255,0.25);
+      background-color: rgba(131, 79, 7, 0.3);
       transition: all 0.5s;
       transform: translate(25%, 130%) rotate(-45deg);
       transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
@@ -218,5 +274,39 @@ header {
     &:hover::before, &:hover::after{
       transform: translate(0,0);	
     }
+  }
+}
+
+.sample1 {
+  background: url(../images/weather-app.png) no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  margin: 10px 0;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+
+  .sample-description {
+    background: rgba(200, 174, 151, 1);
+    height: 90px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    bottom: 0;
+    clip-path: polygon(0 10px, 20px 10px, 40px 0, 60px 10px, 100% 10px, 100% 100%, 0 100%);
+    display: none;
+    z-index: 3;
+  }
+
+  .sample-shadow {
+    height: 100%;
+    width: 100%;
+    background: rgba(131, 79, 7, 0.6);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+    display: none;
   }
 }
