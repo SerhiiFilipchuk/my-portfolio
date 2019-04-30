@@ -493,7 +493,21 @@ header .wrapper {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
+  overflow: hidden;
   z-index: 1;
+}
+
+.sample1:hover .sample-description {
+  -webkit-transform: translate(0, -80px);
+  transform: translate(0, -80px);
+}
+
+.sample1:hover .sample-shadow {
+  background: rgba(131, 79, 7, 0.5);
+}
+
+.sample1:hover .sample-shadow-text {
+  color: #ffffff;
 }
 
 .sample1 .sample-description {
@@ -501,20 +515,36 @@ header .wrapper {
   height: 90px;
   width: 100%;
   border-radius: 0 0 10px 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   position: absolute;
-  bottom: 0;
+  bottom: -80px;
   -webkit-clip-path: polygon(0 10px, 20px 10px, 40px 0, 60px 10px, 100% 10px, 100% 100%, 0 100%);
   clip-path: polygon(0 10px, 20px 10px, 40px 0, 60px 10px, 100% 10px, 100% 100%, 0 100%);
-  display: none;
   z-index: 3;
 }
 
 .sample1 .sample-shadow {
   height: 100%;
   width: 100%;
-  background: rgba(131, 79, 7, 0.6);
+  background: rgba(131, 79, 7, 0);
   border-radius: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   position: absolute;
   z-index: 2;
-  display: none;
+}
+
+.sample1 .sample-shadow-text {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  color: transparent;
+  display: inline-block;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  z-index: 2;
 }

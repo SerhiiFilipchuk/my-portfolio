@@ -286,27 +286,53 @@ header {
   margin: 10px 0;
   transition: all 0.5s;
   position: relative;
+  overflow: hidden;
   z-index: 1;
+
+  &:hover .sample-description {
+    transform: translate(0, -80px);
+  }
+
+  &:hover .sample-shadow {
+    background: rgba(131, 79, 7, .5);
+  }
+
+  &:hover .sample-shadow-text {
+    color: #ffffff;
+  }
 
   .sample-description {
     background: rgba(200, 174, 151, 1);
     height: 90px;
     width: 100%;
     border-radius: 0 0 10px 10px;
+    transition: all 0.5s;
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     clip-path: polygon(0 10px, 20px 10px, 40px 0, 60px 10px, 100% 10px, 100% 100%, 0 100%);
-    display: none;
     z-index: 3;
   }
 
   .sample-shadow {
     height: 100%;
     width: 100%;
-    background: rgba(131, 79, 7, 0.6);
+    background: rgba(131, 79, 7, 0);
     border-radius: 10px;
+    transition: all 0.5s;
     position: absolute;
     z-index: 2;
-    display: none;
+  }
+
+  .sample-shadow-text {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    color: transparent;
+    display: inline-block;
+    transition: all 0.5s;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    z-index: 2;
   }
 }
