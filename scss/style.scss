@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'fonts';
+@import 'icomoon';
 
 * {
   box-sizing: border-box;
@@ -40,7 +41,7 @@ header {
   .hexagon {
     height: 60px;
     width: 50px;
-    background: #000;
+    background: #373737;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     position: absolute;
     transition: all .3s;
@@ -104,6 +105,7 @@ header {
     color: #c9af98;
     padding-left: 20px;
     position: relative;
+    transition: all .3s;
 
     &:hover {
       color: #e8dbca;
@@ -188,7 +190,7 @@ header {
     font-weight: normal;
     font-style: normal;
     line-height: 24px;
-    
+    color: #845007;
   }
 }
 
@@ -201,6 +203,8 @@ header {
   letter-spacing: 2px;
   }
 
+/* MY SKILLS */
+
 .skills {
   height: 300px;
   background: rgba(200, 174, 151, 0.5);
@@ -209,81 +213,67 @@ header {
   .wrapper {
     display: flex;
   }
+
+  .skills-description {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.skill {
+  height: 100px;
+  width: 100px;
+  
+  .skill-name {
+    display: block;
+    height: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 18px;
+    color: #845007;
+    text-align: center;
+  }
+  
+  .skill-img {
+    display: block;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* MY WORKS */
 
 .last-works {
+  height: 600px;
   background: rgba(200, 174, 151, 0.2);
-  filter: brightness(90%);
-  padding: 10px 0;
-  
-  h2 {
-    text-transform: uppercase;
-    font-size: 26px;
-    font-weight: bold;
-    font-style: normal;
-    color: #ed8a63;
-    letter-spacing: 2px;
-    text-align: center;
-    padding: 30px 0 20px 0;
-
-  }
+  padding-top: 50px;
 
   .wrapper {
+    display: flex;
+  }
+
+  .skills-description {
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
   }
-  .sample {
-    background: url(../images/weather-app.png) no-repeat;
-    background-size: cover;
-    filter: brightness(90%);
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
-    margin: 10px 0;
-    transition: all 0.5s;
-    position: relative;
-    overflow: hidden;
-  
-    &::before, &::after{
-      content: 'DroneZone';
-      position: absolute;
-      top: 70%;
-      right: 0;
-      width: 105%;
-      height: 30%;
-        z-index: 1;
-      background-color: rgba(131, 79, 7, 0.3);
-      transition: all 0.5s;
-      transform: translate(25%, 130%) rotate(-45deg);
-      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-    }
 
-    &::after{
-        transition-delay: 0.1s;
-    }
-
-    &:hover {
-      filter: brightness(100%);
-    }
-
-    &:hover::before, &:hover::after{
-      transform: translate(0,0);	
-    }
-  }
 }
 
-.sample1 {
+.sample {
   background: url(../images/weather-app.png) no-repeat;
   background-size: cover;
   border-radius: 10px;
-  height: 300px;
-  width: 300px;
-  margin: 10px 0;
+  height: 250px;
+  width: 250px;
+  margin-bottom: 20px;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -293,19 +283,13 @@ header {
     transform: translate(0, -80px);
   }
 
-  &:hover .sample-shadow {
-    background: rgba(131, 79, 7, .5);
-  }
-
-  &:hover .sample-shadow-text {
-    color: #ffffff;
-  }
-
   .sample-description {
-    background: rgba(200, 174, 151, 1);
-    height: 90px;
+    background: rgba(132,80,7,1);
+    height: 70px;
     width: 100%;
     border-radius: 0 0 10px 10px;
+    padding-left: 20px;
+    padding-top: 20px;
     transition: all 0.5s;
     position: absolute;
     bottom: -80px;
@@ -313,26 +297,108 @@ header {
     z-index: 3;
   }
 
-  .sample-shadow {
-    height: 100%;
-    width: 100%;
-    background: rgba(131, 79, 7, 0);
-    border-radius: 10px;
-    transition: all 0.5s;
-    position: absolute;
-    z-index: 2;
+  .sample-name{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    color: #e8dbca;
   }
 
-  .sample-shadow-text {
-    font-weight: 300;
+  .sample-note {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    color: #c9af98;
+
+  }
+}
+
+/* CONTACT ME */
+
+.contact-me {
+  height: 180px;
+  background: rgba(200, 174, 151, 0.5);
+  padding-top: 50px;
+
+  .wrapper {
+    display: flex;
+  }
+
+  .section-description {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.contact-info {
+
+  .phone, .email {
+    display: flex;
+    height: 40px;
+    width: 250px;
+  }
+
+  .phone {
+    margin-bottom: 20px;
+  }
+
+  span {
+    font-size: 36px;
+    padding-right: 10px;
+  }
+
+  p {
+    font-weight: 500;
     font-style: normal;
     font-size: 16px;
-    color: transparent;
-    display: inline-block;
-    transition: all 0.5s;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    z-index: 2;
+    color: #845007;
+  }
+
+  a {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #845007;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      text-decoration: underline;
+      color: lighten(#845007, 10%);
+    }
+  }
+}
+
+.social-media {
+  margin-left: 20px;
+
+  p {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color: #845007;
+    padding-bottom: 5px;
+  }
+
+  .media {
+    height: 50px;
+    display: flex;
+    vertical-align: middle;
+  }
+
+  a {
+    font-size: 36px;
+    text-decoration: none;
+    padding-right: 10px;
+  }
+
+  .instagram-icon {
+    height: 36px;
+  }
+  
+  .viber-icon {
+    height: 39px;
   }
 }
